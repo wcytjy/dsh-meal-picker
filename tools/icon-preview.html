@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>气泡图标多尺寸预览</title>
+<!--
+  开发用预览页，不随插件发布（放在 tools/ 而不是 assets/）。
+  用法：用无头浏览器截图即可，例如
+    msedge --headless=new --window-size=460,180 --screenshot=icon.png tools/icon-preview.html
+  三个尺寸分别对应：悬停放大、气泡实际大小（50px）、以及更小的情况。
+-->
+<style>
+  html, body { margin: 0; background: #fff; font: 12px/1.4 system-ui, sans-serif; color: #8b93a7; }
+  body { display: flex; align-items: flex-end; gap: 26px; padding: 26px 30px; }
+  .cell { text-align: center; }
+  .bubble {
+    border-radius: 50%; background: #fff; border: 1px solid #e3e6ee;
+    box-shadow: 0 6px 20px rgba(18,22,45,.18);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .bubble img { width: 84%; height: 84%; }
+  .s96 .bubble { width: 120px; height: 120px; }
+  .s50 .bubble { width: 50px; height: 50px; }
+  .s32 .bubble { width: 32px; height: 32px; }
+  .cell span { display: block; margin-top: 8px; }
+</style>
+<div class="cell s96"><div class="bubble"><img src="../assets/whale-girl.png" alt=""></div><span>120px</span></div>
+<div class="cell s72"><div class="bubble" style="width:72px;height:72px"><img src="../assets/whale-girl.png" alt=""></div><span>72px 新默认</span></div>
+<div class="cell s50"><div class="bubble"><img src="../assets/whale-girl.png" alt=""></div><span>50px 旧</span></div>
+<div class="cell s32"><div class="bubble"><img src="../assets/whale-girl.png" alt=""></div><span>32px</span></div>

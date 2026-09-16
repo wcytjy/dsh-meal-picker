@@ -1,0 +1,27 @@
+# dsh-meal-picker 随包携带的补丁层。
+#
+# 当本插件作为一个 profile 的 bundle 依赖被引入时，DSH 会应用这个 patch，
+# 把插件挂进 loader 组合。手动安装时把下面这段 insert 追加到
+# <DSH profile>/cordis.patch.yml 即可（install.ps1 会自动做，并先备份）。
+#
+# config 全部可选，删掉任意一行就用默认值。
+- insert:
+    - id: meal-picker
+      name: 'dsh-meal-picker'
+      config:
+        # 常住城市：填了会优先推荐当地菜（如 成都 -> 四川菜）
+        city: ''
+        # 默认做法：cook=自己做，takeout=点外卖
+        scene: cook
+        # 外国菜：any=都行，off=只要中餐，only=换口味
+        foreign: any
+        # 长期忌口，逗号分隔（面板里右键还能临时加）
+        avoid: ''
+        # 一次给几道候选
+        count: 3
+        # 记住最近推过的多少道，避免连续重复；0 = 不去重
+        recentLimit: 12
+        # 前几道必定是主流菜（0 = 不保底）
+        mainstreamCount: 2
+        # 悬浮气泡的直径（像素，40~140）：想更大更清楚就调这个
+        bubbleSize: 72

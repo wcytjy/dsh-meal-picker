@@ -1,0 +1,17 @@
+# 统一换行符处理，避免不同机器上产生整文件的 diff
+* text=auto
+
+# 二进制，别乱动
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+
+# PowerShell 脚本带 UTF-8 BOM 才能被 Windows PowerShell 5.1 正确读取中文，
+# 这里不做换行转换，保持脚本自己写入的样子
+*.ps1 -text
+
+# 数据文件是单行压缩 JSON，diff 没意义
+data/dishes.json -diff

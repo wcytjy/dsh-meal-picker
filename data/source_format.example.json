@@ -1,0 +1,35 @@
+{
+  "_note": "食物库输入格式示例。tools/build_dishes.py 读的就是这种结构，直接给数组也行（不必包在 foods 里）。",
+  "_about_nutrition": "energy_kcal / protein / fat / cho 这些营养字段是**可选**的：只用于「像不像一道正经菜」的启发式评分，不会写进产物。本插件刻意只保存菜名与菜系等事实性字段 —— 第三方数据库里的热量与营养素属于受版权保护的测量数据，热量改由 AI 在你点「AI 估热量」时现算。",
+  "foods": [
+    {
+      "name": "红烧肉",
+      "category": "菜肴",
+      "sub_category": "家常菜"
+    },
+    {
+      "name": "宫保鸡丁",
+      "category": "菜肴",
+      "sub_category": "四川菜"
+    },
+    {
+      "name": "蛋炒饭",
+      "category": "主食类",
+      "sub_category": "家常菜"
+    },
+    {
+      "name": "鳗鱼寿司",
+      "category": "快餐",
+      "sub_category": "日本料理"
+    },
+    {
+      "name": "红烧带鱼",
+      "category": "菜肴",
+      "sub_category": "家常菜",
+      "energy_kcal": 170,
+      "protein": 18.2,
+      "fat": 7.7,
+      "cho": 6.1
+    }
+  ]
+}

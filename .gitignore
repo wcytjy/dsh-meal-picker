@@ -1,0 +1,25 @@
+# 依赖
+node_modules/
+.pnpm-store/
+
+# 安装脚本产生的备份
+backup-*/
+backup-uninstall-*/
+
+# python 缓存
+__pycache__/
+*.py[cod]
+
+# 构建过程的中间产物（跑 tools/*.py 会重新生成）
+data/candidates.txt
+data/lookup.txt
+data/stars_check.txt
+tools/_scratch/
+# 截图生成过程的中间产物（跑 tools/make-screenshots.mjs 会重新生成）
+tools/shots/
+
+# 系统垃圾
+Thumbs.db
+desktop.ini
+.DS_Store
+*.log
